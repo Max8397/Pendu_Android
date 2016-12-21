@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#000000"
+    tools:context="froissant.pendu.Rules">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/T1"
+        android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="522dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/T2"
+        android:layout_gravity="left|bottom"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp" />
+</FrameLayout>

@@ -1,0 +1,34 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#000000" tools:context=".Home">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:text="Règles du jeu"
+        android:id="@+id/btnrules"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:background="#000000" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:text="Lancer une partie"
+        android:id="@+id/btngame"
+        android:layout_gravity="center"
+        android:textSize="45dp"
+        android:textColor="#fffff710"
+        android:background="#000000" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:text="Quitter"
+        android:id="@+id/btnquit"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#FFFFFF"
+        android:background="#000000"
+        android:textSize="25dp" />
+</FrameLayout>
