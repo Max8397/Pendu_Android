@@ -199,10 +199,10 @@ public class game extends Activity {
     {
         ArrayList<String> tabMots = Creation_TabMots();
 
-        Random rand = new Random(); //Déclaration de l'objet rand, qui servira a utiliser des nombres aléatoires.
-        int nbAleatoire = rand.nextInt(tabMots.size()); //Cette variable contient un nombre compris entre 0 et la valeur de la taille du tableau des mots a chercher.
-        mot_a_deviner = tabMots.get(nbAleatoire); //On insère dans la chaine de caractère mot_a_deviner le mots qui a été tiré au hasard
-        taille = (short)mot_a_deviner.length(); //On définit une variable égale aux nombres de lettre dt mot choisit
+        Random rand = new Random(); //Déclaration de l'objet rand, qui servira à utiliser des nombres aléatoires.
+        int nbAleatoire = rand.nextInt(tabMots.size()); //Cette variable contient un nombre compris entre 0 et la valeur de la taille du tableau des mots à chercher.
+        mot_a_deviner = tabMots.get(nbAleatoire); //On insère dans la chaîne de caractères "mot_a_deviner" le mot qui a été tiré au hasard
+        taille = (short)mot_a_deviner.length(); //On définit une variable égale aux nombres de lettres du mot choisi
 
         MotCache = new char[taille];
 
@@ -217,13 +217,13 @@ public class game extends Activity {
             }
             else if (MotCache[0] == mot_a_deviner.charAt(j))
             {
-                MotCache[j] = mot_a_deviner.charAt(j); // on laisse les lettres identiques à la 1er;
+                MotCache[j] = mot_a_deviner.charAt(j); // on laisse les lettres identiques à la 1er
                 marge++;
             }
             else
                 MotCache[j] = '*'; // on masque les autres
         }
-        mot = String.valueOf(MotCache); // on récupère le contenu du tableau MotCache dans la chaine de caractère mot
+        mot = String.valueOf(MotCache); // on récupère le contenu du tableau "MotCache" dans la chaine de caractères "mot"
 
         System.out.println("mot : " +mot_a_deviner+" taille : "+taille+" mot masqué : "+MotCache.toString());
 
@@ -249,7 +249,7 @@ public class game extends Activity {
 
     //======================================================================================================
 
-    private ArrayList<String> Creation_TabMots() /* Cette fonction va lire le fichier txt contenant les mots */
+    private ArrayList<String> Creation_TabMots() /* Cette fonction va lire le fichier txt qui contient les mots */
     {
         ArrayList<String> mylist = new ArrayList<String>();
 
@@ -280,18 +280,18 @@ public class game extends Activity {
     {
         boolean trouve;
 
-        char[] rep1 = mot_a_deviner.toCharArray(); // on convertit la chaine de caratères mot_a_deviner en caractère dans le tableau rep1
-        char[] rep2 = letter.getText().toString().toCharArray(); // on convertit la chaine de caratères issue de l'entrée texte en caractères dans le tableau rep2
+        char[] rep1 = mot_a_deviner.toCharArray(); // on convertit la chaine de caratères "mot_a_deviner" en caractères dans le tableau "rep1"
+        char[] rep2 = letter.getText().toString().toCharArray(); // on convertit la chaine de caratères issue de l'entrée texte en caractères dans le tableau "rep2"
         char[] rep3 = MotCache; // on met dans le tableau rep3, le mot caché
 
         trouve = remplacement_caractere(rep1, rep2, rep3);
 
-        if (!trouve) { // on augmente le nombre d'échec si la lettre n'est pas dans le mot
-            erreur += 1; // On augemnte le nombre d'erreur
+        if (!trouve) { // on augmente le nombre d'échec(s) si la lettre n'est pas dans le mot
+            erreur += 1; // On augmente le nombre d'erreur(s)
         }
 
         letter.setText(""); //on nettoie l'entrée du texte
-        mot = String.valueOf(rep3); //on récupère le contenu du tableau rep dans la chaine de caractère mot
+        mot = String.valueOf(rep3); //on récupère le contenu du tableau "rep" dans la chaine de caractères "mot"
 
 
     }
@@ -313,7 +313,7 @@ public class game extends Activity {
 
         }
 
-        lettre_deja_jouer[k] = rep2[0]; // Ajout de la lettre dans les lettres déjà saisie
+        lettre_deja_jouer[k] = rep2[0]; // Ajout de la lettre dans les lettres déjà saisies
         k++;
 
         return lettre_deja_saisie;
@@ -330,8 +330,8 @@ public class game extends Activity {
         {
             for (int j = 0; j < taille; j++) { //Pour chaque case...
                 if (rep1[j] == rep2[0]) { //On vérifie si la lettre validée est dans le mot
-                    rep3[j] = rep2[0]; // on remplace l'astérixe par la lettre validée
-                    reussite += 1; // On augmente le nombre de lettre trouvé
+                    rep3[j] = rep2[0]; // on remplace le caractère "*" par la lettre validée
+                    reussite += 1; // On augmente le nombre de lettre(s) trouvée(s)
                     remplace = true;
                 }
             }

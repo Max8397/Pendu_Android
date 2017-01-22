@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.ViewDebug;
 import android.widget.TextView;
 
 
@@ -32,7 +31,12 @@ public class rules extends Activity {
         t1.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
 
         t2 = (TextView) findViewById(R.id.T2);
-        t2.setText(Html.fromHtml("* Un mot va être tiré au hasard. La 1er lettre va s'afficher, ainsi que les endroits avec la même lettre.<br /><br />*  Vous devez proposé une lettre puis valider.<br /><br />Si vous avez juste : la lettre s'affiche et le pendu n'évolue pas <br />Si vous avez faux : le pendu évolue d'une étape <br /><br />* Vous avez le droit à 10 essais<br /><br />* La partie s'arrête lorsque vous avez trouver le mot ou lorsque le pendu est complet."));
+        t2.setText(Html.fromHtml("* Un mot va être tiré au hasard. La 1er lettre va s'afficher, " +
+                "ainsi que les endroits avec la même lettre.<br /><br />*  Vous devez proposer une " +
+                "lettre puis valider.<br /><br />Si votre réponse est correcte : la lettre s'affiche et le pendu " +
+                "n'évolue pas <br />Si votre réponse est fausse : le pendu évolue d'une étape <br /><br />* Vous " +
+                "avez le droit à 10 essais<br /><br />* La partie s'arrête lorsque vous avez trouvé le " +
+                "mot ou lorsque le pendu est complet."));
 
 
     }
